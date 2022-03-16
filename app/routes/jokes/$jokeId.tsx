@@ -1,4 +1,4 @@
-import { json, useLoaderData } from "remix";
+import { json, useLoaderData, Link } from "remix";
 import type { LoaderFunction } from "remix";
 import type { Joke } from "@prisma/client";
 
@@ -21,6 +21,7 @@ export default function JokeRoute() {
     <div>
       <p>Here's your hilarious joke:</p>
       <p>{data?.joke?.content}</p>
+      <Link to=".">{data?.joke?.name} Permalink</Link>
     </div>
   );
 }
